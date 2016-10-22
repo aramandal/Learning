@@ -1,34 +1,20 @@
-function [J, grad] = costFunction(theta, X, y)
-%COSTFUNCTION Compute cost and gradient for logistic regression
-%   J = COSTFUNCTION(theta, X, y) computes the cost of using theta as the
-%   parameter for logistic regression and the gradient of the cost
-%   w.r.t. to the parameters.
+function A = warmUpExercise()
+%WARMUPEXERCISE Example function in octave
+%   A = WARMUPEXERCISE() is an example function that returns the 5x5 identity matrix
 
-% Initialize some useful values
-m = length(y); % number of training examples
+A = [];
+% ============= YOUR CODE HERE ==============
+% Instructions: Return the 5x5 identity matrix 
+%               In octave, we return values by defining which variables
+%               represent the return values (at the top of the file)
+%               and then set them accordingly. 
 
-% You need to return the following variables correctly 
-J = 0;
-grad = zeros(size(theta));
 
-% ====================== YOUR CODE HERE ======================
-% Instructions: Compute the cost of a particular choice of theta.
-%               You should set J to the cost.
-%               Compute the partial derivatives and set grad to the partial
-%               derivatives of the cost w.r.t. each parameter in theta
-%
-% Note: grad should have the same dimensions as theta
-%
-
-% calculate cost function
-h = sigmoid(X*theta);
-J = ((-y)'*log(h)-(1-y)'*log(1-h))/m;
-
-% calculate grads
-grad = (X'*(h - y))/m;
+A = eye(5)
 
 
 
-% =============================================================
+% ===========================================
+
 
 end
